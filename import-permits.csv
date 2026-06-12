@@ -1,0 +1,213 @@
+permit_id,municipality,permit_type,applicant_name,address,status,fee,submitted_date,inspector
+P-100001,Edison,Zoning,Michael Nguyen,914 River Rd,In Review,433,07-Sep-2024,Priya Martinez
+P-100002,Camden,BUILDING,Patricia Cohen,160 Washington Blvd,Pending,-468,2024-06-28,Maria Murphy
+P-100003,Union City,ZONING,Rosa Rossi,722 Oak Ave,CLOSED,  376 ,05/15/2024,Aisha Rossi
+P-100004,Camden,electrical,Patricia Chen,168 Highland Ave,Denied,2868,,Carlos Kim
+P-100005,Trenton,POOL,Carlos Davis,406 Church St,Pending,621,12/19/2024,Aisha Martinez
+P-100006,Toms River,ELECTRICAL,Linda Patel,812 Church St,Open,  1626 ,2025-05-18,Linda Chen
+P-100007,Cherry Hill,Roofing,James Lee,781 Maple Dr,Open,3615.00,07-Oct-2025,Nina Reyes
+P-100008,North Bergen,Building,Aisha Wilson,247 Sunset Ct,Open,"$3,047.00",2025.03.05,Patricia Lee
+P-100009,North Bergen,Mechanical ,David Wilson,688 Church St,Approved,"$1,899.00",01/19/2024,James Garcia
+P-100010,Jersey City,BUILDING,Robert Reyes,686 Highland Ave,closed,3664,2027-07-07,Priya Rossi
+P-100011,Middletown,building,Linda Johnson,348 Oak Ave,Closed,$624.00,2/15/24,Linda Johnson
+P-100012,Bayonne,Electrical ,Jennifer Brown,493 Washington Blvd,Open,  724 ,2024.08.10,Nina Singh
+P-100013,Brick Township,building,Nina Johnson,59 Main St,Approved,"$3,815.00",02/28/2025,Jennifer Kim
+P-100014,Franklin Township,Pool,Robert Cohen,579 River Rd,Pending,$886.00,2024-07-05,
+P-100015,North Bergen,Electrical,David Reyes,956 Cedar Ln,Closed,1563,2025.12.10,Omar Smith
+P-100016,Bayonne,Electrical ,Michael Lee,110 Lincoln Ave,Pending,1204.00,11/21/2024,John Johnson
+P-100017,Old Bridge,Building,Michael Lee,453 River Rd,Approved,-89,,Aisha Walsh
+P-100018,Old Bridge,Zoning,Maria Rossi,256 Church St,Approved,1714.00,3/26/24,James Brown
+P-100019,Cherry Hill,ROOFING,Jennifer Lee,719 Oak Ave,Open,"$3,566.00",6/10/24,Jennifer Smith
+P-100777,Edison,Building,Sara Klein
+P-100020,Union City,Electrical ,John Rossi,410 Church St,Approved,"$1,406.00",2024-03-19,Linda Adams
+P-100021,Cherry Hill,Sign,Hank Davis,726 Elm St,approved,3901,2024.07.03,Rosa Okafor
+P-100022,Edison,Zoning,Priya Okafor,303 River Rd,in review,  1602 ,10/10/25,Susan Wilson
+P-100023,Franklin Township,Demolition,Tomas Davis,813 Lincoln Ave,Open,"$2,769.00",2024-11-10,James Johnson
+P-100024,Gloucester Township,Electrical,Hank Davis,394 Highland Ave,Closed,  2737 ,2024.07.08,
+P-100025,Clifton,Electrical,Tomas Reyes,610 Cedar Ln,In Review,  2559 ,15-Sep-2024,Grace Murphy
+P-100026,Clifton,ZONING,Omar Singh,282 Highland Ave,Pending,1425,2024-03-08,David Garcia
+P-100027,Cherry Hill,Roofing,Priya Kim,599 Lincoln Ave,Approved,$74.00,07/18/2024,Rosa Martinez
+P-100028,Camden,Building,Wei Brown,942 Maple Dr,Approved,160,2025-01-03,
+P-100029,Union City,Fence,Wei Lee,852 Elm St,Open,  3118 ,02/30/2024,Maria Smith
+P-100030,Trenton,Pool,Michael Singh,578 Washington Blvd,Pending,3191,2025-12-04,Susan Nguyen
+P-100031,Brick Township,Roofing,David Garcia,851 Church St,DENIED,3532.00,12-Jan-2025,Robert Reyes
+P-100032,Newark,Fence,Aisha Murphy,446 Maple Dr,Denied,  1156 ,08/14/2024,Carlos Martinez
+P-100033,Paterson,Fence,Tomas Walsh,389 Cedar Ln,Pending,$918.00,10/23/2024,Omar Davis
+P-100034,Old Bridge,mechanical,Grace Murphy,96 Park Pl,Denied,2769,06/14/2025,Aisha Murphy
+P-100035,Camden,Mechanical,Nina Brown,757 Highland Ave,Approved,  2198 ,2024-05-08,Nina Patel
+P-100036,Jersey City,plumbing,Grace Nguyen,588 Park Pl,In Review,"$1,445.00",02/30/2024,Grace Garcia
+P-100037,Jersey City,Pool ,Robert Martinez,783 Elm St,Approved,$974.00,05/28/2024,
+P-100038,Edison,mechanical,John Garcia,178 River Rd,Open,"$2,873.00",5/23/24,Robert Martinez
+P-100039,Franklin Township,Mechanical,Nina Martinez,931 Park Pl,Open,$294.00,10/10/2025,Susan Kim
+P-100040,East Orange,Fence,Maria Cohen,619 Park Pl,Closed,3474,2024-11-27,Patricia Singh
+P-100041,Middletown,Plumbing ,Priya Singh,482 Cedar Ln,Pending,-2794,2024-06-14,
+P-100042,Paterson,Demolition,Wei Reyes,2 Church St,In Review,,06/20/2025,Maria Davis
+P-100043,Toms River,Fence ,,646 Sunset Ct,Denied,$698.00,2/8/24,Tomas Nguyen
+P-100044,Toms River,Zoning,John Cohen,484 Washington Blvd,Closed,1621,02/30/2025,Priya Okafor
+P-100045,East Orange,Building,Susan Walsh,676 Highland Ave,In Review,"$2,256.00",7/15/25,Jennifer Walsh
+P-100046,Old Bridge,fence,Wei Kim,812 Church St,In Review,  201 ,2024-02-28,Tomas Smith
+P-100047,Old Bridge,Plumbing,John Okafor,408 Church St,PENDING,  3569 ,12/25/2025,Rosa Garcia
+P-100048,Brick Township,Electrical,Linda Nguyen,711 Park Pl,Open,"$1,378.00",07/05/2024,Patricia Brown
+P-100049,North Bergen,pool,Grace Walsh,473 Church St,pending,  3731 ,02/30/2025,Aisha Walsh
+P-100050,Old Bridge,FENCE,David Kim,110 Washington Blvd,Pending,2404,11/13/2024,Maria Adams
+P-100051,Brick Township,mechanical,Aisha Martinez,636 Park Pl,Denied,3193.00,2025-02-21,Tomas Johnson
+P-100052,Toms River,Zoning,Priya Brown,806 River Rd,Pending,"$2,224.00",2024.05.27,Susan Okafor
+P-100177,Franklin Township,MECHANICAL,Jennifer Davis,420 River Rd,Denied,"$3,783.00",2024.04.09,John Cohen
+P-100778,Trenton,Electrical,Mark Ruiz,42 Oak Ave,,Open,1500,2024-06-01,Dana Voss
+P-100053,Middletown,PLUMBING,Jennifer Kim,824 River Rd,In Review,$107.00,11/24/2024,Aisha Nguyen
+P-100054,Gloucester Township,Sign,Rosa Martinez,651 Highland Ave,Pending,"$2,709.00",2024-05-16,Nina Patel
+P-100055,Passaic,Sign,Michael Cohen,854 Highland Ave,Pending,$184.00,2024.04.28,Aisha Chen
+P-100056,Passaic,Zoning,Linda Murphy,218 Church St,Open,$257.00,02/30/2024,Nina Davis
+P-100057,Clifton,PLUMBING,Rosa Smith,149 Maple Dr,Closed,$500.00,06/26/2024,James Brown
+P-100058,Toms River,Sign,Robert Singh,371 River Rd,In Review,2113,11/17/2025,James Johnson
+P-100059,Union City,Electrical,Tomas Garcia,330 Sunset Ct,Closed,2643.00,10/17/2024,Priya Nguyen
+P-100060,Edison,sign,David Cohen,234 Elm St,In Review,"$1,683.00",2024.06.22,Grace Garcia
+P-100061,Paterson,electrical,Aisha Patel,601 River Rd,Denied,  550 ,12/02/2024,Aisha Nguyen
+P-100062,Trenton,Fence,Linda Rossi,377 Oak Ave,Approved,976.00,2025-10-22,John Smith
+P-100063,Brick Township,Demolition,Michael Walsh,72 Maple Dr,Open,$425.00,2024-08-11,Carlos Walsh
+P-100064,Jersey City,Pool,Robert Lee,435 Highland Ave,In Review,1168,04-Jul-2024,Grace Reyes
+P-100065,Jersey City,Pool,David Wilson,786 Maple Dr,Pending,-1393,12/14/2024,Jennifer Reyes
+P-100066,Passaic,Building,Tomas Garcia,590 Elm St,Denied,"$2,672.00",06/06/2024,Aisha Garcia
+P-100067,Edison,Pool,Robert Kim,764 Cedar Ln,Closed,-2643,25-Apr-2025,Michael Martinez
+P-100068,Camden,Pool,Robert Brown,644 Highland Ave,Approved,3162,2025-11-21,Carlos Patel
+P-100069,Gloucester Township,ZONING,Hank Johnson,76 Park Pl,Open,$283.00,02/20/2025,Hank Chen
+P-100070,Jersey City,pool,Carlos Adams,155 Main St,Pending,N/A,03/02/2025,Tomas Reyes
+P-100071,Hamilton,Zoning,Carlos Adams,647 Church St,Pending,$437.00,12/28/24,Michael Okafor
+P-100072,Toms River,Zoning ,Wei Patel,961 Oak Ave,In Review,2685.00,2025.12.27,Omar Garcia
+P-100073,Old Bridge,Building,Patricia Davis,785 Highland Ave,Closed,"$1,261.00",,Carlos Adams
+P-100074,Union City,PLUMBING,Rosa Brown,45 Elm St,Denied,1022,2025-08-08,Grace Davis
+P-100075,Franklin Township,FENCE,Wei Reyes,990 Maple Dr,Approved,$616.00,18-Jun-2024,Omar Nguyen
+P-100076,Hamilton,Sign,Priya Garcia,228 Highland Ave,Open,,2025-06-08,Jennifer Smith
+P-100077,Edison,DEMOLITION,Michael Johnson,850 Highland Ave,Closed,3158,2/1/24,Nina Adams
+P-100078,Edison,Mechanical,Maria Martinez,813 Sunset Ct,Open,3477,17-Nov-2024,
+P-100079,Passaic,Roofing,Robert Reyes,70 River Rd,Approved,,01/21/2024,James Rossi
+P-100080,Passaic,ELECTRICAL,Carlos Patel,560 Cedar Ln,Closed,3451,2025-08-21,Tomas Johnson
+P-100081,Jersey City,Building,Susan Reyes,835 River Rd,Open,"$3,135.00",11-Nov-2024,Priya Kim
+P-100082,Union City,Plumbing,Grace Rossi,532 Park Pl,Denied,N/A,2025-03-18,Carlos Wilson
+P-100083,North Bergen,plumbing,Aisha Murphy,891 Cedar Ln,In Review,1174.00,02/22/2024,Patricia Smith
+P-100084,North Bergen,Fence,Robert Martinez,376 Cedar Ln,Approved,182,06/15/2024,Omar Rossi
+P-100085,Camden,Electrical,Patricia Singh,936 River Rd,pending,$928.00,2024-04-04,Patricia Murphy
+P-100086,Cherry Hill,Electrical,Susan Wilson,729 Lincoln Ave,Denied,763,26-Apr-2024,James Rossi
+P-100779,Camden,Plumbing,Joy Tan,88 Main St, Suite 4,Pending,900,07/12/2024,Lee Park
+P-100087,Passaic,Sign,Robert Garcia,735 Lincoln Ave,In Review,3200,02/30/2024,Tomas Reyes
+P-100088,Bayonne,PLUMBING,Michael Cohen,890 Main St,Approved,$676.00,04/12/2025,Susan Garcia
+P-100089,Bayonne,zoning,Robert Reyes,607 Sunset Ct,denied,3744.00,2025-01-27,Hank Lee
+P-100090,Franklin Township,Building,Nina Wilson,310 Highland Ave,Denied,N/A,03/15/2024,Carlos Adams
+P-100091,Cherry Hill,Demolition ,Michael Rossi,109 Cedar Ln,Open,"$1,065.00",10/14/24,Patricia Okafor
+P-100092,Cherry Hill,Plumbing,Omar Murphy,316 Highland Ave,In Review,"$1,036.00",5/16/24,Grace Wilson
+P-100093,Edison,zoning,Wei Rossi,53 Sunset Ct,Pending,"$2,316.00",09/09/2024,Rosa Nguyen
+P-100094,Edison,demolition,Aisha Patel,522 Elm St,Open,$209.00,9/15/24,Michael Okafor
+P-100095,Cherry Hill,pool,Susan Walsh,849 River Rd,Denied,2355.00,06/22/2024,Susan Smith
+P-100096,Camden,pool,Maria Walsh,537 Church St,In Review,$655.00,12/04/2025,Priya Patel
+P-100099,Toms River,Zoning ,Robert Rossi,672 Park Pl,Denied,"$1,228.00",12/09/2025,Hank Martinez
+P-100097,Trenton,Pool ,Maria Patel,575 Cedar Ln,In Review,  2202 ,11-Sep-2024,John Adams
+P-100098,Clifton,Zoning,Susan Wilson,707 Lincoln Ave,In Review,  1478 ,10-May-2025,Wei Kim
+P-100099,Toms River,Zoning ,Robert Rossi,672 Park Pl,Closed,$877.00,12/09/2025,Hank Martinez
+P-100100,East Orange,Mechanical,Priya Okafor,103 Church St,Open,  4000 ,2024-11-16,Susan Okafor
+P-100101,Jersey City,electrical,Jennifer Chen,871 Main St,Closed,"$1,761.00",2024.07.26,
+P-100102,Franklin Township,Demolition,Nina Reyes,962 Maple Dr,In Review,"$1,167.00",15-Dec-2024,James Okafor
+P-100103,Franklin Township,Mechanical,Wei Cohen,89 Elm St,Closed,  625 ,13-May-2024,Carlos Wilson
+P-100104,Franklin Township,demolition,Maria Nguyen,164 Elm St,Denied,"$3,203.00",2024.06.20,Grace Patel
+P-100105,North Bergen,Sign ,Nina Davis,697 Sunset Ct,Open,2202.00,02/30/2024,Nina Reyes
+P-100106,Bayonne,DEMOLITION,Tomas Nguyen,735 Sunset Ct,Approved,1874,07/15/2025,Susan Smith
+P-100107,Newark,Pool,Priya Rossi,555 Main St,Open,"$3,874.00",25-Mar-2024,Priya Rossi
+P-100108,Union City,Roofing,Nina Patel,357 Oak Ave,Approved,$571.00,10-Jan-2024,Priya Chen
+P-100109,Clifton,Demolition,,677 Elm St,Open,"$1,035.00",8/20/24,Jennifer Johnson
+P-100110,Clifton,Building,Susan Martinez,750 Sunset Ct,Approved,"$3,214.00",03/22/2024,John Johnson
+P-100111,Franklin Township,plumbing,Priya Chen,996 Cedar Ln,Denied,"$1,611.00",2024-07-05,Nina Singh
+P-100112,Clifton,PLUMBING,Maria Chen,427 River Rd,In Review,"$1,044.00",08/28/2024,David Johnson
+P-100113,North Bergen,Electrical,Hank Chen,214 Cedar Ln,Open,  917 ,2024-12-25,Rosa Davis
+P-100114,Clifton,Zoning,Nina Rossi,369 River Rd,In Review,453.00,2024-04-12,
+P-100115,Bayonne,pool,Susan Patel,236 Elm St,Closed,  2095 ,2024.05.25,Grace Murphy
+P-100116,Passaic,Sign,Nina Johnson,860 Oak Ave,Denied,248,2025-04-03,Omar Murphy
+P-100117,North Bergen,Pool ,,565 Elm St,approved,"$2,244.00",11/14/25,Linda Nguyen
+P-100118,Clifton,Sign,Aisha Lee,81 Cedar Ln,In Review,2364,27-Nov-2024,Maria Garcia
+P-100119,Union City,building,Patricia Garcia,445 Church St,Approved,  3564 ,07-Apr-2024,Hank Singh
+P-100120,Paterson,Zoning ,Hank Johnson,871 Cedar Ln,closed,3131.00,05/06/2024,Wei Chen
+P-100121,Toms River,Electrical,Aisha Johnson,238 Oak Ave,Approved,  3961 ,2024.01.21,Grace Martinez
+P-100122,Union City,pool,Robert Adams,253 Lincoln Ave,Pending,"$2,965.00",2024-06-12,Susan Murphy
+P-100123,Camden,Electrical,Tomas Chen,418 Oak Ave,pending,"$2,495.00",10-Jan-2024,Nina Martinez
+P-100124,Hamilton,Plumbing,Susan Lee,65 Maple Dr,In Review,"$1,277.00",04/24/2024,David Murphy
+P-100780,Bayonne,Roofing,"Big O" Roofing,12 River Rd,Open,2200,2024-08-09,Tom Reed
+P-100125,,Roofing,Rosa Kim,338 Highland Ave,Denied,"$2,484.00",2025.04.16,Carlos Wilson
+P-100126,Gloucester Township,Mechanical,John Kim,955 Sunset Ct,Approved,  3194 ,2024-12-07,Robert Cohen
+P-100127,Toms River,Mechanical,Michael Cohen,76 Highland Ave,In Review,2434,,Aisha Chen
+P-100128,Paterson,mechanical,Aisha Brown,46 Sunset Ct,Denied,2699.00,2027-02-01,Jennifer Reyes
+P-100129,Bayonne,Pool,Aisha Kim,696 Sunset Ct,Closed,1462,2024.07.03,Michael Rossi
+P-100130,Middletown,Sign,Grace Nguyen,714 Highland Ave,Pending,$233.00,2024-11-04,Jennifer Reyes
+P-100131,Hamilton,Roofing ,Jennifer Kim,191 Church St,In Review,  169 ,14-Oct-2024,David Lee
+P-100132,Paterson,Sign,Carlos Davis,269 Church St,Approved,"$2,667.00",10/4/24,Rosa Brown
+P-100133,Brick Township,Pool,Michael Okafor,313 Oak Ave,Denied,"$1,641.00",07/06/2024,Patricia Chen
+P-100134,Brick Township,DEMOLITION,Rosa Johnson,975 Main St,Closed,3389,08/14/2025,Tomas Singh
+P-100135,Franklin Township,Mechanical,John Martinez,173 Highland Ave,In Review,2301,09/27/2024,Maria Murphy
+P-100136,Old Bridge,Mechanical,Maria Murphy,883 Oak Ave,Open,"$3,226.00",23-Oct-2025,Priya Brown
+P-100137,Trenton,building,Nina Lee,173 Cedar Ln,Pending,  1235 ,2027-11-27,Priya Johnson
+P-100138,Toms River,Plumbing,Carlos Martinez,693 Elm St,Approved,2640,21-Feb-2024,Wei Reyes
+P-100139,Passaic,Fence,James Garcia,470 Church St,Pending,N/A,7/7/25,Grace Lee
+P-100140,Brick Township,Pool,Grace Okafor,781 Main St,DENIED,,,Priya Davis
+P-100141,Toms River,Zoning,John Garcia,257 Oak Ave,Denied,,2025-05-24,
+P-100142,Gloucester Township,Pool,,352 Oak Ave,In Review,"$2,892.00",2024-02-24,Aisha Wilson
+P-100057,Clifton,PLUMBING,Rosa Smith,149 Maple Dr,Closed,$500.00,06/26/2024,James Brown
+P-100138,Toms River,Plumbing,Carlos Martinez,693 Elm St,In Review,469,21-Feb-2024,Wei Reyes
+P-100143,Toms River,Plumbing,Hank Smith,169 Highland Ave,Closed,  2622 ,2025-11-15,Linda Patel
+P-100144,Franklin Township,Demolition ,Carlos Patel,661 Oak Ave,approved,  2538 ,11/10/2024,David Kim
+P-100145,Jersey City,Mechanical,Linda Martinez,609 Oak Ave,Open,"$1,529.00",2025-07-12,
+P-100146,Paterson,Mechanical,Maria Kim,644 Lincoln Ave,In Review,"$1,784.00",2025-09-20,Robert Reyes
+P-100147,Toms River,roofing,Robert Wilson,748 Washington Blvd,Open,525,2024-11-24,James Patel
+P-100148,Hamilton,Demolition,John Brown,768 Park Pl,Open,"$3,209.00",02/30/2024,Hank Garcia
+P-100149,East Orange,FENCE,Patricia Rossi,792 Oak Ave,Denied,-3010,,
+P-100150,Passaic,Plumbing,Maria Chen,732 Lincoln Ave,Closed,  1368 ,02/30/2024,Aisha Nguyen
+P-100151,Jersey City,Sign ,Wei Garcia,887 Park Pl,Pending,N/A,01/12/2024,Susan Adams
+###,,,this row is junk,,,,,
+P-100152,Passaic,Fence ,David Chen,252 Maple Dr,In Review,2268.00,06/01/2024,Susan Nguyen
+P-100153,Clifton,Building ,Michael Lee,944 Washington Blvd,Approved,"$1,741.00",2027-02-19,
+P-100154,Franklin Township,Plumbing,John Okafor,403 Lincoln Ave,Pending,"$1,352.00",2024-03-25,Linda Brown
+P-100155,Cherry Hill,Sign,David Murphy,272 Oak Ave,Denied,"$2,936.00",2024.03.03,
+P-100156,Brick Township,Plumbing,Wei Murphy,564 Washington Blvd,OPEN,$622.00,03/07/2024,Robert Walsh
+P-100157,Paterson,Electrical,Tomas Patel,868 Cedar Ln,In Review,3835.00,08/01/2024,Aisha Davis
+P-100158,Camden,Plumbing,Rosa Adams,303 Highland Ave,Approved,N/A,07/05/2024,Omar Martinez
+P-100159,Bayonne,ROOFING,Aisha Singh,497 Cedar Ln,Approved,"$1,367.00",,John Johnson
+P-100160,Gloucester Township,Pool ,Patricia Nguyen,247 Park Pl,Denied,  279 ,2025.07.12,Patricia Brown
+P-100161,Cherry Hill,Demolition ,James Rossi,578 Maple Dr,Closed,  3477 ,2024-09-10,Maria Martinez
+P-100162,Newark,Building,Rosa Davis,349 Lincoln Ave,Pending,  655 ,2024-09-28,Wei Walsh
+P-100163,Brick Township,plumbing,Priya Singh,179 Lincoln Ave,Denied,3693.00,11/19/2024,Susan Patel
+P-100164,Newark,Pool,Hank Johnson,326 Sunset Ct,Approved,2082.00,6/11/24,Robert Okafor
+P-100165,Camden,Electrical,Linda Smith,449 Lincoln Ave,Closed,  3673 ,09/13/2024,Hank Martinez
+P-100166,Paterson,Building,Carlos Lee,76 Cedar Ln,In Review,  357 ,6/20/24,James Cohen
+P-100167,Hamilton,Roofing,Linda Okafor,195 Elm St,Denied,"$3,841.00",2027-05-08,Wei Walsh
+P-100168,Gloucester Township,Demolition,Robert Wilson,641 Sunset Ct,Open,155,28-Aug-2024,Grace Singh
+P-100169,Camden,Sign,Aisha Kim,457 Main St,In Review,"$3,478.00",2027-11-04,Aisha Chen
+P-100170,Franklin Township,BUILDING,Omar Cohen,704 Highland Ave,Closed,"$2,000.00",01/17/2025,Hank Adams
+P-100171,Middletown,Plumbing ,David Patel,81 Church St,Denied,$655.00,02/03/2025,Carlos Lee
+P-100172,Newark,pool,Priya Nguyen,152 Sunset Ct,Open,-3838,2024-05-28,Priya Lee
+P-100173,Gloucester Township,Fence,John Kim,624 Church St,Open,"$1,671.00",2024-01-24,Aisha Smith
+P-100174,Brick Township,FENCE,Linda Martinez,998 Lincoln Ave,Pending,1153,4/15/24,Grace Reyes
+P-100175,Jersey City,Plumbing,Omar Kim,872 River Rd,Open,761.00,4/2/24,David Lee
+P-100176,Middletown,electrical,Jennifer Rossi,457 Maple Dr,In Review,"$2,453.00",2024-12-27,Wei Johnson
+P-100177,Franklin Township,MECHANICAL,Jennifer Davis,420 River Rd,Denied,"$3,783.00",2024.04.09,John Cohen
+P-100064,Jersey City,Pool,Robert Lee,435 Highland Ave,In Review,3449,04-Jul-2024,Grace Reyes
+P-100178,Passaic,Mechanical,Omar Adams,105 Main St,Denied,3504,2025-10-10,Robert Okafor
+P-100179,Cherry Hill,zoning,Susan Davis,784 Washington Blvd,Approved,1705,2025-01-21,Priya Kim
+P-100180,Jersey City,POOL,Carlos Martinez,654 Highland Ave,Denied,1518.00,09/06/2025,John Chen
+P-100162,Newark,Building,Rosa Davis,349 Lincoln Ave,Approved,"$2,288.00",2024-09-28,Wei Walsh
+P-100181,Hamilton,demolition,Jennifer Rossi,893 Park Pl,Pending,"$1,572.00",08/02/2024,Rosa Garcia
+P-100182,Trenton,Roofing,Priya Johnson,155 Maple Dr,Pending,  1726 ,2024-03-11,Robert Singh
+P-100183,Hamilton,Building,John Davis,173 Sunset Ct,In Review,"$3,266.00",07/21/2025,
+P-100184,Bayonne,Demolition ,Carlos Reyes,693 Main St,Closed,$976.00,2024-02-13,Robert Johnson
+P-100185,Brick Township,sign,Carlos Cohen,138 Cedar Ln,In Review,"$1,521.00",2024.01.08,David Smith
+P-100186,Hamilton,Building,John Chen,609 Main St,Denied,,2025-02-14,John Singh
+P-100098,Clifton,Zoning,Susan Wilson,707 Lincoln Ave,Denied,"$1,330.00",10-May-2025,Wei Kim
+P-100187,Trenton,Building,Linda Reyes,621 Lincoln Ave,Open,-2580,2024-02-16,John Reyes
+P-100188,Passaic,Zoning,Nina Singh,705 Highland Ave,Open,  102 ,2025-11-16,Omar Garcia
+P-100189,Edison,Mechanical,Susan Lee,103 Maple Dr,Pending,"$1,525.00",2/4/25,James Patel
+P-100190,Hamilton,Fence ,John Garcia,351 Maple Dr,In Review,1163,2024-07-21,Michael Johnson
+P-100191,Hamilton,Pool,Hank Murphy,389 Cedar Ln,Denied,  3654 ,08/16/2024,Maria Garcia
+P-100192,Cherry Hill,SIGN,Hank Walsh,979 Church St,Approved,2192,2024-11-24,Wei Patel
+P-100193,Bayonne,Pool,Patricia Reyes,873 Highland Ave,Open,"$3,127.00",01/17/2024,
+P-100194,Middletown,Fence,Grace Murphy,510 Lincoln Ave,Open,1702,02/26/2024,Susan Reyes
+P-100195,Middletown,DEMOLITION,Jennifer Murphy,786 Sunset Ct,Denied,2741,,Aisha Wilson
+P-100196,Passaic,Building ,Grace Patel,761 Lincoln Ave,Pending,"$2,552.00",2024-04-15,Carlos Nguyen
+P-100197,Jersey City,Pool,Tomas Murphy,980 River Rd,In Review,,16-Oct-2024,Patricia Walsh
+P-100198,Toms River,pool,Carlos Reyes,429 Sunset Ct,Closed,"$1,170.00",08/26/2024,Omar Wilson
+P-100199,Bayonne,sign,David Davis,298 Church St,Denied,593,2024-09-18,Linda Rossi
+P-100200,Franklin Township,roofing,Nina Wilson,433 Main St,Open,1610,2024.05.25,John Patel
