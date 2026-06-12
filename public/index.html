@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Import Permits Explorer</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+.header { background: #1e293b; border-bottom: 1px solid #334155; padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.header h1 { font-size: 1.2rem; font-weight: 700; color: #38bdf8; }
+.header-sub { font-size: 0.8rem; color: #64748b; }
+.badge { background: #0369a1; color: #bae6fd; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+.badge-warn { background: #7c2d12; color: #fed7aa; }
+
+.main { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: grid; gap: 1.5rem; }
+
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.stat-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 1rem 1.25rem; }
+.stat-card.danger { border-color: #7f1d1d; background: #1c0a0a; }
+.stat-card .label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin-bottom: 4px; }
+.stat-card .value { font-size: 1.75rem; font-weight: 800; color: #38bdf8; line-height: 1; }
+.stat-card.danger .value { color: #f87171; }
+.stat-card .sub { font-size: 0.72rem; color: #64748b; margin-top: 4px; }
+
+.panel { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 1.25rem; }
+.panel-title { font-size: 0.8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 1rem; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.controls input, .controls select {
+  background: #0f172a; border: 1px solid #334155; color: #e2e8f0;
+  padding: 0.45rem 0.75rem; border-radius: 6px; font-size: 0.85rem; outline: none;
+}
+.controls input:focus, .controls select:focus { border-color: #38bdf8; }
+.controls input[type="text"] { flex: 1; min-width: 220px; }
+.toggle-flags { background: #7c2d12; border: 1px solid #991b1b; color: #fed7aa; padding: 0.45rem 0.85rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; }
+.toggle-flags.active { background: #991b1b; border-color: #ef4444; }
+
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+@media (max-width: 900px) { .chart-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .chart-grid { grid-template-columns: 1fr; } }
+.chart-box { position: relative; height: 220px; }
+
+.flag-pill { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 0.65rem; font-weight: 700; margin: 1px; }
+.flag-neg { background: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; }
+.flag-case { background: #422006; color: #fde68a; border: 1px solid #78350f; }
+.flag-missing { background: #1e1b4b; color: #c4b5fd; border: 1px solid #4338ca; }
+
+.status-pill { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
+.s-approved { background: #052e16; color: #86efac; }
+.s-denied { background: #450a0a; color: #fca5a5; }
+.s-pending { background: #422006; color: #fde68a; }
+.s-inreview { background: #0c1a2e; color: #7dd3fc; }
+.s-open { background: #1e1b4b; color: #c4b5fd; }
+.s-closed { background: #1a1a2e; color: #94a3b8; }
+.s-other { background: #1e293b; color: #94a3b8; }
+
+.table-wrap { overflow-x: auto; margin-top: 0.5rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+thead th { text-align: left; padding: 0.55rem 0.65rem; border-bottom: 2px solid #334155; color: #94a3b8; font-weight: 600; cursor: pointer; white-space: nowrap; user-select: none; position: sticky; top: 0; background: #1e293b; }
+thead th:hover { color: #38bdf8; }
+thead th.sorted { color: #38bdf8; }
+tbody tr { border-bottom: 1px solid #1e293b; transition: background 0.1s; }
+tbody tr:hover { background: #253047; }
+tbody tr.flagged-row { background: #1c100a; }
+tbody tr.flagged-row:hover { background: #261408; }
+tbody td { padding: 0.5rem 0.65rem; color: #cbd5e1; }
+.fee-neg { color: #f87171; font-weight: 700; }
+.fee-pos { color: #86efac; }
+
+.pagination { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; font-size: 0.78rem; color: #64748b; }
+.pagination button { background: #0f172a; border: 1px solid #334155; color: #e2e8f0; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 0.78rem; }
+.pagination button:disabled { opacity: 0.3; cursor: default; }
+.pagination button:not(:disabled):hover { border-color: #38bdf8; color: #38bdf8; }
+
+#loading { text-align: center; padding: 4rem; color: #38bdf8; font-size: 1.1rem; }
+.empty { text-align: center; padding: 2.5rem; color: #475569; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Import Permits Explorer</h1>
+  <span class="badge" id="total-badge">...</span>
+  <span class="badge badge-warn" id="flagged-badge" style="display:none"></span>
+  <span class="header-sub">NJ Municipal Permits — Data Quality Dashboard</span>
+</div>
+
+<div id="loading">Loading permits...</div>
+
+<div class="main" id="app" style="display:none">
+
+  <div class="stats-row" id="stats-row"></div>
+
+  <div class="chart-grid">
+    <div class="panel">
+      <div class="panel-title">By Status</div>
+      <div class="chart-box"><canvas id="chart-status"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">By Permit Type</div>
+      <div class="chart-box"><canvas id="chart-type"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">By Municipality (Top 10)</div>
+      <div class="chart-box"><canvas id="chart-muni"></canvas></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search permit, applicant, address..." />
+      <select id="filter-status">
+        <option value="">All Statuses</option>
+      </select>
+      <select id="filter-type">
+        <option value="">All Types</option>
+      </select>
+      <select id="filter-muni">
+        <option value="">All Municipalities</option>
+      </select>
+      <button class="toggle-flags" id="toggle-flags">⚑ Show Flagged Only</button>
+      <select id="page-size">
+        <option value="25">25 / page</option>
+        <option value="50">50 / page</option>
+        <option value="100">100 / page</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">
+      Permits
+      <span id="showing-count" style="color:#38bdf8; margin-left:8px; font-size:0.85rem; text-transform:none; letter-spacing:0"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="permit_id">Permit ID <span class="si">↕</span></th>
+            <th data-col="municipality">Municipality <span class="si">↕</span></th>
+            <th data-col="permit_type_normalized">Type <span class="si">↕</span></th>
+            <th data-col="applicant_name">Applicant <span class="si">↕</span></th>
+            <th data-col="status_normalized">Status <span class="si">↕</span></th>
+            <th data-col="fee">Fee <span class="si">↕</span></th>
+            <th data-col="submitted_date">Submitted <span class="si">↕</span></th>
+            <th data-col="inspector">Inspector <span class="si">↕</span></th>
+            <th>Flags</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <span id="page-info"></span>
+      <button id="prev-btn">Prev</button>
+      <button id="next-btn">Next</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let allRecords = [];
+let filteredRecords = [];
+let sortCol = 'permit_id';
+let sortDir = 1;
+let currentPage = 1;
+let pageSize = 25;
+let showFlaggedOnly = false;
+const charts = {};
+
+const COLORS = ['#38bdf8','#818cf8','#34d399','#fb923c','#f472b6','#a78bfa','#fbbf24','#4ade80','#f87171','#22d3ee','#e879f9','#a3e635'];
+
+async function init() {
+  const [dataRes, summaryRes] = await Promise.all([fetch('/api/data'), fetch('/api/summary')]);
+  const { records } = await dataRes.json();
+  const summary = await summaryRes.json();
+  allRecords = records;
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'grid';
+
+  document.getElementById('total-badge').textContent = `${summary.total} permits`;
+  if (summary.flaggedTotal > 0) {
+    const b = document.getElementById('flagged-badge');
+    b.textContent = `⚑ ${summary.flaggedTotal} flagged`;
+    b.style.display = '';
+  }
+
+  buildStats(summary);
+  buildCharts(summary);
+  buildFilters();
+  setupSortHeaders();
+
+  document.getElementById('search').addEventListener('input', () => { currentPage = 1; applyFilters(); });
+  document.getElementById('filter-status').addEventListener('change', () => { currentPage = 1; applyFilters(); });
+  document.getElementById('filter-type').addEventListener('change', () => { currentPage = 1; applyFilters(); });
+  document.getElementById('filter-muni').addEventListener('change', () => { currentPage = 1; applyFilters(); });
+  document.getElementById('page-size').addEventListener('change', e => { pageSize = +e.target.value; currentPage = 1; renderTable(); });
+  document.getElementById('prev-btn').addEventListener('click', () => { currentPage--; renderTable(); });
+  document.getElementById('next-btn').addEventListener('click', () => { currentPage++; renderTable(); });
+  document.getElementById('toggle-flags').addEventListener('click', () => {
+    showFlaggedOnly = !showFlaggedOnly;
+    document.getElementById('toggle-flags').classList.toggle('active', showFlaggedOnly);
+    currentPage = 1;
+    applyFilters();
+  });
+
+  applyFilters();
+}
+
+function buildStats(s) {
+  const row = document.getElementById('stats-row');
+  const approved = s.byStatus['Approved'] || 0;
+  const denied = s.byStatus['Denied'] || 0;
+  const pending = (s.byStatus['Pending'] || 0) + (s.byStatus['In Review'] || 0) + (s.byStatus['Open'] || 0);
+
+  const cards = [
+    { label: 'Total Permits', value: s.total, sub: 'all records' },
+    { label: 'Active / Pending', value: pending, sub: 'Pending + In Review + Open' },
+    { label: 'Approved', value: approved, sub: `${((approved/s.total)*100).toFixed(0)}% of total`, cls: '' },
+    { label: 'Denied', value: denied, sub: `${((denied/s.total)*100).toFixed(0)}% of total` },
+    { label: 'Avg Fee', value: `$${parseFloat(s.avgFee).toFixed(0)}`, sub: 'all permits' },
+    { label: 'Negative Fees', value: s.negativeFees, sub: 'data quality issue', cls: s.negativeFees > 0 ? 'danger' : '' },
+    { label: 'Case Issues', value: s.caseIssues, sub: 'inconsistent casing', cls: s.caseIssues > 0 ? 'danger' : '' },
+    { label: 'Total Flagged', value: s.flaggedTotal, sub: 'need attention', cls: s.flaggedTotal > 0 ? 'danger' : '' },
+  ];
+
+  row.innerHTML = cards.map(c => `
+    <div class="stat-card ${c.cls || ''}">
+      <div class="label">${c.label}</div>
+      <div class="value">${c.value}</div>
+      <div class="sub">${c.sub}</div>
+    </div>`).join('');
+}
+
+function buildFilters() {
+  const statuses = [...new Set(allRecords.map(r => r.status_normalized).filter(Boolean))].sort();
+  const types = [...new Set(allRecords.map(r => r.permit_type_normalized).filter(Boolean))].sort();
+  const munis = [...new Set(allRecords.map(r => (r.municipality||'').trim()).filter(Boolean))].sort();
+
+  const fStatus = document.getElementById('filter-status');
+  statuses.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; fStatus.appendChild(o); });
+
+  const fType = document.getElementById('filter-type');
+  types.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; fType.appendChild(o); });
+
+  const fMuni = document.getElementById('filter-muni');
+  munis.forEach(m => { const o = document.createElement('option'); o.value = m; o.textContent = m; fMuni.appendChild(o); });
+}
+
+function applyFilters() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const fStatus = document.getElementById('filter-status').value;
+  const fType = document.getElementById('filter-type').value;
+  const fMuni = document.getElementById('filter-muni').value;
+
+  filteredRecords = allRecords.filter(r => {
+    if (showFlaggedOnly && r.flags.length === 0) return false;
+    if (fStatus && r.status_normalized !== fStatus) return false;
+    if (fType && r.permit_type_normalized !== fType) return false;
+    if (fMuni && (r.municipality||'').trim() !== fMuni) return false;
+    if (search) {
+      const hay = [r.permit_id, r.applicant_name, r.address, r.municipality, r.inspector].join(' ').toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+
+  if (sortCol) {
+    filteredRecords.sort((a, b) => {
+      let av = a[sortCol] ?? '', bv = b[sortCol] ?? '';
+      if (sortCol === 'fee') return ((av || 0) - (bv || 0)) * sortDir;
+      return String(av).localeCompare(String(bv)) * sortDir;
+    });
+  }
+
+  currentPage = 1;
+  renderTable();
+}
+
+function statusClass(s) {
+  if (!s) return 's-other';
+  const l = s.toLowerCase();
+  if (l === 'approved') return 's-approved';
+  if (l === 'denied') return 's-denied';
+  if (l === 'pending') return 's-pending';
+  if (l === 'in review') return 's-inreview';
+  if (l === 'open') return 's-open';
+  if (l === 'closed') return 's-closed';
+  return 's-other';
+}
+
+function renderTable() {
+  const start = (currentPage - 1) * pageSize;
+  const page = filteredRecords.slice(start, start + pageSize);
+  const totalPages = Math.ceil(filteredRecords.length / pageSize);
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+
+  if (!page.length) {
+    tbody.innerHTML = '<tr><td colspan="9" class="empty">No permits found</td></tr>';
+  } else {
+    page.forEach(r => {
+      const flagPills = r.flags.map(f => {
+        if (f === 'negative_fee') return `<span class="flag-pill flag-neg">neg fee</span>`;
+        if (f === 'case_issue') return `<span class="flag-pill flag-case">casing</span>`;
+        if (f === 'missing_status') return `<span class="flag-pill flag-missing">no status</span>`;
+        if (f === 'missing_type') return `<span class="flag-pill flag-missing">no type</span>`;
+        return '';
+      }).join('');
+
+      const feeVal = r.fee !== null ? r.fee : '—';
+      const feeCls = r.fee !== null && r.fee < 0 ? 'fee-neg' : 'fee-pos';
+      const feeStr = r.fee !== null ? `$${r.fee.toLocaleString()}` : '—';
+
+      const tr = document.createElement('tr');
+      if (r.flags.length) tr.classList.add('flagged-row');
+      tr.innerHTML = `
+        <td><code style="color:#38bdf8;font-size:0.75rem">${r.permit_id||'—'}</code></td>
+        <td>${r.municipality||'—'}</td>
+        <td>${r.permit_type_normalized||'—'}</td>
+        <td>${r.applicant_name||'—'}</td>
+        <td><span class="status-pill ${statusClass(r.status_normalized)}">${r.status_normalized||'—'}</span></td>
+        <td class="${feeCls}">${feeStr}</td>
+        <td style="white-space:nowrap;color:#94a3b8">${r.submitted_date||'—'}</td>
+        <td>${r.inspector||'—'}</td>
+        <td>${flagPills || '<span style="color:#334155">—</span>'}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  document.getElementById('showing-count').textContent = `${filteredRecords.length} of ${allRecords.length} permits`;
+  document.getElementById('page-info').textContent = `Page ${currentPage} / ${totalPages || 1}`;
+  document.getElementById('prev-btn').disabled = currentPage <= 1;
+  document.getElementById('next-btn').disabled = currentPage >= totalPages;
+}
+
+function setupSortHeaders() {
+  document.querySelectorAll('thead th[data-col]').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      if (sortCol === col) sortDir *= -1; else { sortCol = col; sortDir = 1; }
+      document.querySelectorAll('thead th').forEach(t => { t.classList.remove('sorted'); t.querySelector('.si') && (t.querySelector('.si').textContent = '↕'); });
+      th.classList.add('sorted');
+      th.querySelector('.si').textContent = sortDir === 1 ? '↑' : '↓';
+      applyFilters();
+    });
+  });
+}
+
+function buildCharts(s) {
+  // Status chart
+  const statusEntries = Object.entries(s.byStatus).sort((a, b) => b[1] - a[1]);
+  buildDoughnut('chart-status', statusEntries.map(e => e[0]), statusEntries.map(e => e[1]));
+
+  // Type chart (top 10)
+  const typeEntries = Object.entries(s.byType).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  buildBar('chart-type', typeEntries.map(e => e[0]), typeEntries.map(e => e[1]));
+
+  // Municipality chart (top 10)
+  const muniEntries = Object.entries(s.byMunicipality).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  buildBar('chart-muni', muniEntries.map(e => e[0]), muniEntries.map(e => e[1]));
+}
+
+function buildDoughnut(id, labels, data) {
+  charts[id] = new Chart(document.getElementById(id), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: COLORS }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'right', labels: { color: '#94a3b8', padding: 10, font: { size: 11 } } } }
+    }
+  });
+}
+
+function buildBar(id, labels, data) {
+  charts[id] = new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: COLORS, borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#94a3b8', maxRotation: 40, font: { size: 10 } }, grid: { color: '#1e293b' } },
+        y: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#334155' } }
+      }
+    }
+  });
+}
+
+init();
+</script>
+</body>
+</html>
